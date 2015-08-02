@@ -1,0 +1,43 @@
+{
+	"global":
+			{
+				"chromeColor":"0xDEEBFF",
+				"color": "0x444444",
+				"contentBackgroundColor": "0xFFFFFF",
+				"symbolColor": "0x333333",
+				"rollOverColor": "0xEBF4FF",
+				"selectionColor": "0xDEEBFF",
+				"focusColor": "0xEEEEEE",
+				"accentColor": "0xC0E3FF"
+			},
+	"Application":
+			{
+				"backgroundColor": "0xEBF4FF",
+				"fontFamily":"Arial,_sans"
+			},
+	"grid_corner":
+			{
+				"backgroundColor":"0xA9C4E9,0xD7E4F4,0x8CA1B6,0xD4E1F4"
+			},
+	"grid_colheader":
+			{
+				"color":"0x000000",
+				"backgroundColor":"0xF8F9FB,0xD7DFEB,0xF5F7F8,0xC3CAD6",
+				"selectionColor":"0xFCF6E8,0xF3C66E,0xFCEFE3,0xF29536",
+				"borderColor":"0x9EB6CE,0xF29536"
+			},
+	"grid_rowheader":
+			{
+				"color":"0x000000",
+				"backgroundColor":"0xF8F9FB,0xD7DFEB,0xF5F7F8,0xC3CAD6",
+				"selectionColor":"0xFCF6E8,0xF3C66E,0xFCEFE3,0xF29536",
+				"borderColor":"0x9EB6CE,0xF29536"
+			},
+	"grid_selectcell":
+			{
+				"selectionColor":"0xAFD7FF,0xAFD7FF",
+				"fisrtborderColor":"0x9EB6CE",
+				"fisrtborderStyle":"solid",
+				"fisrtborderWeight":"3"
+			}
+}

@@ -1,0 +1,1851 @@
+<funcs>
+	<group type="date">
+	<func name="day" clz="com.funcs.datetime.DayFunc">
+函数说明：
+    从日期型数据中获得该日在本月中是几号
+    
+语法：
+    day(dateExp)
+    
+参数说明：
+    dateExp        表达式，其结果必须为日期或日期时间格式的字符串
+    
+返回值：
+    整数
+    
+示例：
+    例1：day(datetime2("19800227","yyyyMMdd"))    返回：27
+    
+    例2：day("19840112")            返回：12
+    
+    例3：day(dateTime("2006-01-15 10:20:30"))    返回：15
+	</func>
+	<func name="day360" clz="com.funcs.datetime.Days360Func">
+函数说明：
+    计算两个日期型数据相差几天
+    
+语法：
+    day360(dateExp1, dateExp2)
+    
+参数说明：
+    dateExp1        日期或标准日期格式的字符串，
+                    如：yyyy-MM-dd HH:mm:ss
+                            
+    dateExp2        日期或标准日期格式的字符串，
+                    如：yyyy-MM-dd HH:mm:ss
+                            
+返回值：
+    整数
+    
+示例：
+    例1：day360(dateTime("1983-12-15 10:20:30"),datetime2("1982年12月30日","yyyy年MM月dd日"))
+            返回：-350
+    
+    例2：day360("1983-12-15 10:20:30","1982-12-30")    返回：-350
+	</func>
+	<func name="dayName" clz="com.funcs.datetime.DayName">
+函数说明：
+    从日期型数据中获得该日的星期名称
+    
+语法：
+    dayName(dateExp)
+    
+参数说明：
+    dateExp        日期或标准日期格式的字符串，
+                如：yyyy-MM-dd HH:mm:ss
+    
+返回值：
+    字符型
+    
+示例：
+    例1：dayName(datetime2("19800227","yyyyMMdd"))    返回：星期三
+    
+    例2：dayName(dateTime(12345))            返回：星期四
+    
+    例3：dayName(dateTime("2006-01-15 10:20:30"))    返回：星期日
+    
+    例4：dayName("1972-11-08")            返回：星期三
+    
+    例5：dayName("1972-11-08 10:20:30")        返回：星期三
+	</func>
+	<func name="hour" clz="com.funcs.datetime.Hour">
+函数说明：
+    从日期时间型数据中，获得当前时间位于一天中的第几个时辰
+    
+语法：
+    hour(datetimeExp)
+    
+参数说明：
+    datetimeExp    日期或标准日期格式的字符串，
+                如：yyyy-MM-dd HH:mm:ss，HH:mm:ss
+    
+返回值：
+    整数
+    
+示例：
+    例1：hour("10:30:25")                返回：10
+    
+    例2：hour("1983-12-15 10:30:25")        返回：10
+    
+    例3：hour(dateTime("2006-01-15 13:20:30"))    返回：13
+	</func>
+	<func name="minute" clz="com.funcs.datetime.Minute">
+函数说明：
+    从日期时间型数据中，获得分钟的信息
+    
+语法：
+    minute(datetimeExp)
+    
+参数说明：
+    datetimeExp    日期或标准日期格式的字符串，
+                如：yyyy-MM-dd HH:mm:ss, HH:mm:ss
+    
+返回值：
+    整数
+    
+示例：
+    例1：minute("1972-11-08 10:20:30")        返回：20
+    
+    例2：minute(dateTime("2006-01-15 13:20:30"))    返回：20	
+	</func>
+	<func name="month" clz="com.funcs.datetime.Month">
+函数说明：
+    取得指定日期所在的月份
+    
+语法：
+    month(dateExp)
+    
+参数说明：
+    dateExp        日期或标准日期格式的字符串，
+                如：yyyy-MM-dd HH:mm:ss,yyyy-MM-dd 
+    
+返回值：
+    整数
+    
+示例：
+    例1：month(datetime2("19800227","yyyyMMdd"))    返回：2
+    
+    例2：month("1972-11-08 10:20:30")        返回：11
+    
+    例3：month(dateTime("2006-01-15 13:20:30"))    返回：1
+	</func>
+	<func name="now" clz="com.funcs.datetime.Now">
+函数说明：
+    获得系统此刻的日期时间
+    
+语法：
+    now()
+    
+返回值：
+    日期时间	
+	</func>
+	<func name="second" clz="com.funcs.datetime.Second">
+函数说明：
+    从日期时间型数据中，获得秒信息
+    
+语法：
+    second(datetimeExp)
+    
+参数说明：
+    datetimeExp        日期或标准日期格式的字符串，
+                    如：yyyy-MM-dd HH:mm:ss, HH:mm:ss
+    
+返回值：
+    整数
+    
+示例：
+    例1：second("1972-11-08 10:20:30")        返回：30
+    
+    例2：second(dateTime("2006-01-15 13:20:45"))    返回：45
+	</func>
+	<func name="year" clz="com.funcs.datetime.Year">
+函数说明：
+    从日期型数据中获得年信息
+    
+语法：
+    year(dateExp)
+    
+参数说明：
+    dateExp        日期或标准日期格式的字符串，
+                        如：yyyy-MM-dd HH:mm:ss,yyyy-MM-dd
+    
+返回值：
+    整数
+    
+示例：
+    例1：year(datetime2("19800227","yyyyMMdd"))    返回：1980
+    
+    例2：year("1972-11-08 10:20:30")        返回：1972
+    
+    例3：year(dateTime("2006-01-15 13:20:45"))    返回：2006	
+	</func>
+	</group>
+	<group type="cell">
+	<func name="avg" clz="com.funcs.cell.Avg">
+函数说明：
+       对可扩展单元格或集合表达式求平均值
+       
+语法：
+       avg(expression{,containNull})
+
+ 参数说明：
+       expression 需要求平均值的单元格或表达式，一般为可扩展单元格或集合表达式
+		containNull 是否对null元素进行计数
+       
+返回值：
+       实数
+       
+示例：
+       例1：avg(A1:B10) 求得A1至B10之间单元格的平均值，注意是以当前格为基格计算A1和B10
+       
+       例2：avg(arg1)  其中arg1是整数组，表示求得arg1中所有数据的平均值
+       
+       例3：avg(B1)  表示求得当前主格扩展区域内所有扩展后的B1单元格的平均值
+	</func>
+	<func name="if" clz="com.funcs.cell.IfDefine">
+函数说明：
+    根据布尔表达式的不同计算结果，返回不同的值。本函数从左到右计算，先出现的
+    布尔表达式先算，如果出现为true的表达式，则返回相应的结果，后面的不再计算。
+    如果没有一个布尔表达式为true,而且有缺省值表达式，则返回缺省值，否则返回null。
+    
+语法：
+    if(boolExp1,valueExp1{,boolExp2,valueExp2 {,boolExp3,valueExp3 {, {defaultExp}}}})
+
+参数说明：
+    boolExp(n)        布尔表达式，如果结果为真，则返回对应的值表达式计算结果
+    valueExp(n)        值表达式，和布尔表达式一一对应
+    defaultExp        缺省值表达式，如果所有布尔表达式结果都为假，则返回本表达式计算结果
+    
+返回值：
+    数据类型不定，由valueExp(n)的运算结果决定。
+    
+示例：
+    例1：if(value()=100,-65536,value()>100,-16776961,-14336 )
+            表示当前格的值等于100时，返回-65536颜色值，当前格的值大于100时，返回-16776961颜色值，否则返回-14336颜色值
+	</func>
+	<func name="col" clz="com.funcs.cell.Col">
+函数说明：
+    取得当前单元格所在列的列号
+    
+语法：
+    col({cellExp})
+    
+参数说明：
+    cellExp        单元格表达式(不写表示当前单元格)
+返回值：
+    整数
+    
+举例：
+    在B列单元格中写入=col()，返回值为2，如果B列存在横向扩展格，则列号依次改变。	
+	</func>
+	<func name="count" clz="com.funcs.cell.Count">
+函数说明：
+	对可扩展单元格或集合表达式进行计数
+       
+语法：
+       count(expression{,containNull})
+       
+参数说明：
+       expression    需要被计数的单元格或表达式，一般为可扩展单元格或集合表达式
+	containNull   缺省为true，表示对null元素也进行计数；false则相反
+       
+返回值：
+       整数
+       
+示例：
+       例1：count(A1:B10,false) 以当前格为基格计算A1和B10之间总共有几个单元格，如果单元格的值为空则不进行计数
+       
+       例2：count(arg1) 其中arg1是参数组，统计arg1中有几个数据
+       
+       例3：count(B1) 表示求得当前主格扩展区域内所有扩展后的B1单元格的个数
+	</func>
+	<func name="text" clz="com.funcs.cell.Text">
+函数说明：
+        取单元格的显示值
+        
+语法：
+    text( cell )
+    
+参数说明：
+    cell        单元格
+    
+返回值：
+    字符型
+    
+示例：
+    例1：if(text(A1) like "中国*",true,false)
+            表示如果A1单元格的显示值含有中国的字样，返回true，否则返回false。	
+	</func>
+	<func name="max" clz="com.funcs.cell.Max">
+函数说明：
+       对可扩展单元格或集合表达式求最大值
+       
+语法：
+        max(expression)
+		max(cellExp,exp)
+       
+参数说明：
+        expression    需要求最大值的单元格或表达式，一般为可扩展单元格或集合表达式
+		cellExp    单元格或单元格集合，以cellExp里的单元格为当前格计算表达式exp
+		exp    表达式
+       
+返回值：
+       数据类型不定，由expression的计算结果决定
+       
+示例：
+       例1：max(A1:A10)    求出单元格A1至A10之间的最大值
+       
+       例2：max(arg1)        其中arg1是参数组，求出arg1中的最大值
+       
+       例3：max(B1)        表示求得当前主格扩展区域内所有扩展后的B1单元格的最大值
+	</func>
+	<func name="min" clz="com.funcs.cell.Min">
+函数说明：
+       对可扩展单元格或集合表达式求最小值
+       
+语法：
+        min(expression)
+		min(cellExp,exp)
+       
+参数说明：
+        expression    需要求最小值的单元格或表达式，一般为可扩展单元格或集合表达式
+		cellExp    单元格或单元格集合，以cellExp里的单元格为当前格计算表达式exp
+		exp    表达式
+       
+返回值：
+       数据类型不定，由expression的计算结果决定
+       
+示例：
+       例1：min(A1:A10)    求出单元格A1至A10之间的最小值
+       
+       例2：min(arg1)        其中arg1是参数组，求出arg1中的最小值
+       
+       例3：min(B1)        表示求得当前主格扩展区域内所有扩展后的B1单元格的最小值
+	</func>
+	<func name="nvl" clz="com.funcs.cell.Nvl">
+函数说明：
+    根据第一个表达式的值是否为空，若为空则返回指定值
+    
+语法：
+    nvl( valueExp1, valueExp2 )
+    
+参数说明：
+    valueExp1    需要计算的表达式，其结果不为空时返回其值
+    valueExp2    需要计算的表达式，当valueExp1结果为空时返回此值
+    
+返回值：
+    valueExp1或valueExp2的结果值
+    
+示例：
+    例1：nvl(A1,"")        表示当A1为空时，返回空串，否则返回A1
+
+    例2：nvl(value(),0)    表示当当前格为空时返回0，否则返回当前格的值
+	</func>
+	<func name="rgb" clz="com.funcs.cell.Rgb">
+函数说明：
+    将红、绿、蓝、透明度转换成颜色值
+    
+语法：
+    rgb( redIntExp, greenIntExp, blueIntExp{, alphaIntExp} )
+    
+参数说明：
+    redIntExp        0-255之间的整数表达式，表示红色
+    greenIntExp        0-255之间的整数表达式，表示绿色
+    blueIntExp        0-255之间的整数表达式，表示蓝色
+    alphaIntExp        0-255之间的整数表达式，表示透明度，
+                    0表示完全透明，255表示完全不透明，其他数值呈现不同程度的透明度
+                    缺省值为255
+                                
+返回值：
+    64位的长整数
+    
+示例：
+    例1：rgb(123,123,123)        返回：-8684677
+    
+    例2：rgb(123,123,123,123)    返回：2071690107
+    
+    例3：rgb(123,123,123,255)    返回：-8684677
+    
+    例4：rgb(123,123,123,0)        返回：8092539
+	</func>
+	<func name="row" clz="com.funcs.cell.Row">
+函数说明：
+    取得当前单元格所在行的行号
+    
+语法：
+    row({cellExp})
+参数说明:
+    cellExp        单元格表达式(不写表示当前单元格)
+返回值：
+    整数
+    
+举例：
+    在第三行单元格中写入=row()，返回值为3，如果第三行存在纵向扩展格，则行号依次改变。
+	</func>
+	<func name="sum" clz="com.funcs.cell.Sum">
+函数说明：
+       对可扩展单元格或集合表达式进行求和
+       
+语法：
+        sum(expression)
+		sum(cellExp,exp)
+       
+参数说明：
+        expression        需要被求和的单元格或表达式，一般为可扩展单元格或集合表达式
+		cellExp    单元格或单元格集合，以cellExp里的单元格为当前格计算表达式exp
+		exp    表达式
+       
+返回值：
+       实数或者字符型，由被汇总的单元格数据类型决定
+       
+示例：
+       例1：sum(A1:A10)      求出单元格A1至A10的合计值，被统计单元格可以是数值型也可以是字符型
+       
+       例2：sum(arg1)        其中arg1是参数组，求出arg1中所有元素的合计值
+       
+       例3：sum(B1)        表示求得当前主格扩展区域内所有扩展后的B1单元格的合计值
+	</func>
+	<func name="value" clz="com.funcs.cell.Value">
+函数说明：
+    取得当前单元格的值
+    
+语法：
+    value()
+    
+返回值：
+    当前单元格的值
+	</func>
+	<func name="to" clz="com.funcs.cell.To">
+函数说明：
+    生成一组连续的整数数据
+语法：
+    to(startExp,endExp{,stepExp})
+参数说明：
+    startExp    整数数据开始的表达式
+    endExp      整数数据结束的表达式 
+    stepExp   整数数据步长的表达式
+函数示例：
+    to(1,5)=list(1,2,3,4,5)
+    to(1,5,2)=list(1,3,5)
+    to(-5,-10,-2)=list(-5,-7,-9)
+    to(-10,-8)=list(-10,-9,-8)
+	</func>
+	<func name="list" clz="com.funcs.cell.List">
+函数说明：
+    获得一个枚举的数据集合
+    
+语法：
+    list(valueExp1{,valueExp2{,valueExp3{,……}}})
+    
+参数说明：
+    valueExp(n)        可以是常数或表达式，也可以是集合表达式
+    
+返回值：
+    一组枚举数据的集合
+    
+示例：
+    例1：list(1,3,5,7,9)
+    
+    例2：list("abc","def","ghj")
+    
+    例3：list(arg1,to(1,3),"a","b","c")    假设arg1是个整数组，其值为7,8,9，
+            那么该表达式的结果值为{7,8,9,1,2,3,"a","b","c"}
+	</func>
+	</group>
+	<group type="ds">
+	<func name="select" clz="com.funcs.cell.Select">
+函数说明：
+    从数据集的当前行集中选取符合条件的记录
+语法：
+    select(dsname,select_exp{, sort_exp{, filter_exp{, sort_field}}} )
+
+参数说明：
+	dsname      	  数据集名称
+    select_exp：    要选择的字段列名/列号，，也可以是表达式。
+                列号用#n表示，例如#0代表第0列，#1代表第1列，依此类推
+    sort_exp:    指定数据排序的顺序，true表示降序排列，false表示升序排列。
+    filter_exp:    数据过滤表达式，如果全部选出，则此参数省略，仅用“,”占位。
+    sort_field:    数据排序表达式。如果此项为空，则按照select_exp字段排序，否则按照此项，此项字段可以是多个字段用逗号隔开。
+返回值：
+    一组数据的集合，数据类型由select_exp的运算结果决定
+    
+函数示例：
+    例1：select("ds1",name)
+            从数据源ds1中选取name字段列的所有值，不排序
+
+    例2：select("ds1", #2, true )
+            从数据源ds1中选取第二个字段列的所有值并降序排列
+
+    例3：select("ds1", name,false,sex=='1')
+            从数据源ds1中选取性别为男性('1')的name字段列的值并升序排列
+
+    例4：ds1.select( name, true, sex=='1', id )
+            从数据源ds1中选取性别为男性的name字段列的值并按id字段降序排列
+	</func>
+	<func name="group" clz="com.funcs.math.Group">
+函数说明：
+    根据分组表达式，从数据集中选出一组组集。
+    
+语法：
+    group(dsname,selectExp{,sortExp{,filterExp{,groupExp}}})
+
+参数说明：
+	dsname      	  数据集名称
+    selectExp        选出的分组表达式，可以是字段列名/列号，也可以是表达式。
+                    列号用#n表示，例如#0代表第0列，#1代表第1列，依此类推
+                                
+    sortExp            分组前记录的排序顺序，true为逆序，false为顺序
+    filterExp        过滤表达式
+    groupExp        分组后对组的排序表达式，一般是汇总运算的表达式，如组合计等
+
+返回值：
+    一组数据的集合，数据类型由selectExp的运算结果来决定
+
+示例：
+    例1：ds1.group(class)
+            把数据集ds1中所有记录按照class字段进行分组，
+            并返回每组的class值组成的集合
+    
+    例2：ds1.group(class, true )
+            把数据集ds1中所有记录按照class字段降序排列，然后根据class进行分组，
+            并返回每组的class值组成的集合
+    
+    例3：ds1.group(class,false,sex=='1')
+            从数据源ds1中选取性别为"1"的记录，按照class字段升序排列，
+            然后根据class进行分组，并返回每组的class值组成的集合
+    
+    例4：ds1.group(省份,true,'',sum(工业产值))
+            对数据集ds1按照省份进行分组，分组后求出每组的sum(工业产值)，
+            然后按照这个汇总值对组进行逆序排列
+	</func>
+	<func name="fieldNameList" clz="com.funcs.math.FieldList">
+函数说明：
+    得到数据集列名的集合
+    
+语法：
+    fieldNameList(dsname{,filterExp})
+
+参数说明：
+    dsname      	  数据集名称
+    filterExp        过滤表达式
+
+返回值：
+    列名字符串的集合
+
+示例：
+    例1：fieldNameList("ds1")
+    	求得ds1列名的集合
+    
+    例2：group("ds1","backcol1,backcol2")
+		求得ds1列名的集合，不包括backcol1,backcol2
+	</func>
+	<func name="fieldIndex" clz="com.funcs.math.FieldIndex">
+函数说明：
+    得到列名在数据集中的列的索引，从0开始
+    
+语法：
+    fieldIndex(dsname,fieldName)
+
+参数说明：
+    dsname      	  数据集名称
+    fieldName        列名
+
+返回值：
+   列的索引
+
+示例：
+    例1：
+    列名集合： A,B,C,D,E
+    fieldIndex("ds1",A)	返回0
+	</func>
+	<func name="fieldName" clz="com.funcs.math.FieldName">
+函数说明：
+    得到列名
+    
+语法：
+    fieldName(dsname,fieldIndex)
+
+参数说明：
+    dsname      	  数据集名称
+    fieldIndex        列索引
+
+返回值：
+   列名
+
+示例：
+    例1：
+    列名集合： A,B,C,D,E
+    fieldName("ds1",1)	返回B
+	</func>
+	<func name="rowcount" clz="com.funcs.math.Rowcount">
+函数说明：
+    	得到数据集记录数
+    
+语法：
+    rowcount(dsname{,filterExp})
+
+参数说明：
+    dsname      	  数据集名称
+    filterExp        过滤条件
+
+返回值：
+	数据集记录数
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    rowcount("ds1")	返回2
+    rowcount("ds1","C=='1'")	返回1
+	</func>
+	<func name="colcount" clz="com.funcs.math.Colcount">
+函数说明：
+    	得到数据集列数
+    
+语法：
+    colcount(dsname)
+
+参数说明：
+    dsname      	  数据集名称
+
+返回值：
+	得到数据集列数
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    colcount("ds1")	返回5
+	</func>
+	<func name="dsrow" clz="com.funcs.math.Dsrow">
+函数说明：
+    	得到数据集某一行数值集合
+    
+语法：
+    dsrow(dsname,rowindex)
+
+参数说明：
+    dsname      	 数据集名称
+	rowindex		行索引
+返回值：
+	得到数据集某一行数值集合
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    dsrow("ds1",0)	返回[1,1,1,1,1]		
+	</func>
+	<func name="dscol" clz="com.funcs.math.Dscol">
+函数说明：
+    	得到数据集某一列数值集合
+    
+语法：
+    dscol(dsname,colindex)
+
+参数说明：
+    dsname      	 数据集名称
+	colindex		列索引
+返回值：
+	得到数据集某一列数值集合
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    dscol("ds1",0)	返回[1,2]		
+	</func>
+	<func name="dscell" clz="com.funcs.math.Dscell">
+函数说明：
+    	得到数据集某一单元数值
+    
+语法：
+    dscell(dsname,rowindex,colindex)
+
+参数说明：
+    dsname      	 数据集名称
+    rowindex		行索引
+	colindex		列索引
+返回值：
+	得到数据集某一单元数值
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    dscell("ds1",0,1)	返回1		
+	</func>
+	</group>
+	<group type="math">
+	<func name="abs" clz="com.funcs.math.Abs">
+函数说明：
+    计算参数的绝对值
+    
+语法：
+    abs(numberExp)
+    
+参数说明：
+    numberExp        待计算绝对值的数据
+    
+返回值：
+    数值型
+    
+示例：
+    例1：abs(-3245.54)    返回：3245.54
+    
+    例2：abs(-987)        返回：987
+	</func>
+	<func name="ceil" clz="com.funcs.math.Ceil">
+函数说明：
+    对数据在指定位置上进行截取，剩余部分只要有值就进位
+    相关的函数有:
+        floor:对数据在指定位置上进行截取，剩余部分只要有值全舍去
+        round:对数据在指定位置上进行截取，剩余部分四舍五入
+        
+语法：
+    ceil(numberExp, {nExp})
+    
+参数说明：
+    numberExp        需要进行截取的数据
+    nExp            整数，用于指定需要进行截取的位置，
+                            
+返回值：
+    数值型
+    
+示例：
+    例1：=ceil(3450001.004,0)    返回：3450002.0
+    例2：=ceil(3450001.004,-1)    返回：3450010.0
+    例3：=ceil(3450001.004,-2)    返回：3450100.0
+    例4：=ceil(3450001.004,1)    返回：3450001.1
+    例5：=ceil(3450001.004,2)    返回：3450001.01	
+	</func>
+	<func name="cos" clz="com.funcs.math.Cos">
+函数说明：
+    计算参数的余弦值，其中参数以弧度为单位
+    相关的函数有sin()    计算参数的正弦值
+            tan()    计算参数的正切值
+    
+语法：
+    cos(numberExp)
+    
+参数说明：
+    numberExp        待计算余弦值的弧度数
+    
+返回值：
+    double型
+    
+示例：
+    例1：cos(pi())        返回：-1
+    
+    例2：cos(pi(2))        返回：1
+	</func>
+	<func name="exp" clz="com.funcs.math.Exp">
+函数说明：
+    计算e的n次幂
+    
+语法：
+    exp(nExp)
+    
+参数说明：
+    nExp    指定次幂数
+    
+返回值：
+    数值型
+    
+示例：
+    例1：exp(4.3)        返回：73.69979369959579	
+	</func>
+	<func name="fact" clz="com.funcs.math.Fact">
+函数说明：
+    计算参数的阶乘
+    
+语法：
+    fact(nExp)
+    
+参数说明：
+    nExp        待计算阶乘的数据
+    
+返回值：
+    长整数（64位）
+    
+示例：
+    例1：fact(10)        返回：3628800	
+	</func>
+	<func name="floor" clz="com.funcs.math.Floor">
+函数说明：
+    对数据在指定位置上进行截取，剩余部分只要有值全舍去
+    相关的函数有:
+        ceil:对数据在指定位置上进行截取，剩余部分只要有值就进位
+        round:对数据在指定位置上进行截取，剩余部分四舍五入
+        
+语法：
+    floor(numberExp, {nExp})
+    
+参数说明：
+    numberExp        需要进行截取的数据
+    nExp            整数，用于指定需要进行截取的位置，
+                            
+返回值：
+    数值型
+    
+示例：
+    例1：=floor(3451231.234,0)    返回：3451231.0
+    例2：=floor(3451231.234,-1)    返回：3451230.0
+    例3：=floor(3451231.234,-2)    返回：3451200.0
+    例4：=floor(3451231.234,1)    返回：3451231.2
+    例5：=floor(3451231.234,2)    返回：3451231.23	
+	</func>
+	<func name="log" clz="com.funcs.math.Log">
+函数说明：
+    计算参数的自然对数
+    相关函数：log10()    计算以10为底的对数
+    
+语法：
+    log(numberExp)
+    
+参数说明：
+    numberExp        需要计算自然对数的数据
+    
+返回值：
+    数值型
+    
+示例：
+    例1：log(54)        返回：3.9889840465642745	
+	</func>
+	<func name="log10" clz="com.funcs.math.Log10">
+    函数说明：
+        计算以10为底的对数
+        相关函数：log()        计算自然对数
+        
+    语法：
+        log10(numberExp)
+        
+    参数说明：
+        numberExp        需要计算以10为底的对数的数据
+        
+    返回值：
+        数值型
+    
+    示例：
+        例1：log10(54)        返回：1.7323937598229684
+	</func>
+	<func name="pi" clz="com.funcs.math.Pi">
+函数说明：
+    计算圆周率及其倍数
+    
+语法：
+    pi(numberExp)
+    
+参数说明：
+    numberExp        倍数，此参数省略，则返回圆周率
+    
+返回值：
+    圆周率及其倍数
+    
+示例：
+    例1：pi()        返回：3.141592653589793
+    
+    例2：pi(2)        返回：6.283185307179586
+	</func>
+	<func name="pow" clz="com.funcs.math.Pow">
+函数说明：
+    计算x的n次幂
+    
+语法：
+    pow(xExp, nExp)
+    
+参数说明：
+    xExp        底数
+    nExp        次幂
+    
+返回值：
+    数值型
+    
+示例：
+    例1：pow(2,4)        返回：16.0
+	</func>
+	<func name="rand" clz="com.funcs.math.Rand">
+函数说明：
+    取得0-1.0之间的一个随机数
+    
+语法：
+    rand()
+    
+参数说明：
+    无
+    
+返回值：
+    [0, 1.0)之间的一个随机数，浮点型
+    
+示例：
+    例1：rand()        获得[0, 1.0)之间的一个随机数
+    
+    例2：rand()*100        获得[0, 100)之间的一个随机浮点数
+    
+    例3：integer(rand()*100)    获得[0, 100)之间的一个随机整数
+	</func>
+	<func name="round" clz="com.funcs.math.Round">
+函数说明：
+    对数据在指定位置上进行截取，剩余部分四舍五入
+    相关的函数有:
+        ceil:对数据在指定位置上进行截取，剩余部分只要有值就进位
+        floor:对数据在指定位置上进行截取，剩余部分只要有值全舍去
+        
+语法：
+    round(numberExp, {nExp})
+    
+参数说明：
+    numberExp        需要进行截取的数据
+    nExp            整数，用于指定需要进行截取的位置，
+
+返回值：
+    数值型
+    
+示例：
+    例1：=round(3451251.274,0)    返回：3451251.0
+    例2：=round(3451251.274,-1)    返回：3451250.0
+    例3：=round(3451251.274,-2)    返回：3451300.0
+    例4：=round(3451251.274,1)    返回：3451251.3
+    例5：=round(3451251.274,2)    返回：3451251.27
+	</func>
+	<func name="sign" clz="com.funcs.math.Sign">
+函数说明：
+    确定参数是正数还是负数还是0，当正数时返回1，负数时返回-1，0时返回0
+    
+语法：
+    sign(number)
+    
+参数说明：
+    number        需要判断正负的数据
+    
+返回值：
+    整数
+    
+示例：
+    例1：sign(-10)        返回：-1
+    
+    例2：sign(30)        返回：1
+    
+    例3：sign(0)        返回：0
+	</func>
+	<func name="sin" clz="com.funcs.math.Sin">
+函数说明：
+    计算参数的正弦值，其中参数以弧度为单位
+    相关的函数有cos()    计算参数的余弦值
+            tan()    计算参数的正切值
+语法：
+    sin(number)
+    
+参数说明：
+    number        需要计算正弦值的弧度数
+    
+返回值：
+    double型
+    
+示例：
+    例1：sin(pi())        返回：1.2246467991473532E-16
+    
+    例2：sin(pi(2))        返回：-2.4492935982947064E-16
+    
+    例3：sin(pi()/2)    返回：1.0
+	</func>
+	<func name="sqrt" clz="com.funcs.math.Sqrt">
+函数说明：
+    计算平方根
+    
+语法：
+    sqrt(number)
+
+参数说明：
+    number            需要计算平方根的数据
+
+返回值：
+    数值型
+
+示例：
+    例1：sqrt(100)        返回：10.0
+
+    例2：sqrt(99)        返回：9.9498743710662
+	</func>
+	<func name="tan" clz="com.funcs.math.Tan">
+函数说明：
+    计算参数的正切值，其中参数以弧度为单位
+    相关的函数有sin()    计算参数的正弦值
+            cos()    计算参数的余弦值
+语法：
+    tan(number)
+    
+参数说明：
+    需要计算正切值的弧度数
+    
+返回值：
+    double型
+    
+示例：
+    例1：tan(pi()/2)    返回：1.633123935319537E16
+    
+    例2：tan(pi(2))        返回：-2.4492935982947064E-16
+	</func>
+	<func name="asin" clz="com.funcs.math.Asin">
+函数说明：
+        计算参数的反正弦值，其中参数为-1~1的实数
+        相关的函数有acos()    计算参数的反余弦值
+                    atan()    计算参数的反正切值
+语法：
+    asin(number)
+    
+参数说明：
+    number        需要计算反正弦值的实数
+    
+返回值：
+    圆周率及其倍数
+    
+示例：
+    例1：asin(-1)        返回：-1.5707963267948966
+    
+    例2：asin(sin(pi()/2))   返回：1.5707963267948966
+    
+    例3：asin(sin(0))    返回：0.0
+	</func>
+	<func name="acos" clz="com.funcs.math.Acos">
+函数说明：
+        计算参数的反余弦值，其中参数为-1~1的实数
+        相关的函数有asin()    计算参数的反正弦值
+                    atan()    计算参数的反正切值
+语法：
+    acos(number)
+    
+参数说明：
+    number        需要计算反余弦值的实数
+    
+返回值：
+    圆周率及其倍数
+    
+示例：
+    例1：acos(-1)        返回：3.141592653589793
+    
+    例2：acos(cos(pi()/2))   返回：1.5707963267948966
+    
+    例3：acos(cos(0))    返回：0.0
+	</func>
+	<func name="atan" clz="com.funcs.math.Atan">
+函数说明：
+        计算参数的反正切值，其中参数为实数
+        相关的函数有asin()    计算参数的反正弦值
+                    acos()    计算参数的反余弦值
+语法：
+    atan(number)
+    
+参数说明：
+    number        需要计算反正切值的实数
+    
+返回值：
+    圆周率及其倍数
+    
+示例：
+    例1：atan(1)            返回：0.7853981633974483
+    
+    例2：atan(tan(pi()/2))   返回：1.5707963267948966
+    
+    例3：atan(tan(0))     返回：0.0
+	</func>
+	</group>
+	<group type="string">
+	<func name="asc" clz="com.funcs.texts.Asc">
+函数说明：
+    取字符串指定位置的字符的unicode值，如果是ascii字符则返回ascii码
+    (一般来说，英文字符及其扩展字符都是ascii字符，中文、日文、韩文等
+    亚洲字符都是unicode字符，ascii字符为8位，unicode字符为16位（其中有3位用于标志字符类型）)
+    
+    相关函数：char()        根据给定的unicode编码或者ascii码取得其对应的字符
+    
+语法：
+    asc( string{, nPos} )
+    
+参数说明：
+    string        给定的字符串
+    nPos            整数表达式，缺省为0
+    
+返回值：
+    整数
+    
+示例：
+    例1：=asc("def")    返回：100    (ascii)
+    
+    例2：=asc("def",1)    返回：101    (ascii)
+    
+    例3：=asc("中国")    返回：20013    (unicode)
+    
+    例4：=asc("中国",1)    返回：22269    (unicode)
+	</func>
+	<func name="char" clz="com.funcs.texts.Char">
+函数说明：
+    根据给定的unicode编码或者ascii码取得其对应的字符
+    (一般来说，英文字符及其扩展字符都是ascii字符，中文、日文、韩文等
+    亚洲字符都是unicode字符，ascii字符为8位，unicode字符为16位（其中有3位用于标志字符类型）)
+    
+    相关函数：asc()        取字符串指定位置的字符的unicode值，如果是ascii字符则返回ascii码
+    
+语法：
+    char( int )
+    
+参数说明：
+    int            整数表达式，unicode编码或者ascii编码
+    
+返回值：
+    字符型
+    
+示例：
+    例1：=char(22269)    返回：'国'
+    
+    例1：=char(101)        返回：'e'
+	</func>
+	<func name="chn" clz="com.funcs.texts.Chn">
+函数说明：
+    将一个整数转化成汉字大写
+    
+语法：
+    chn( intExp{, abbrivateExp{, uppercaseExp }} )
+    
+参数说明：
+    intExp            整数表达式
+    abbrivateExp    为true时采用亿万千百十的写法，
+                                为false时采用一二三四五六七的写法，缺省为false
+    uppercaseExp    为false时采用零一二三四五六七八九十百千，
+                                为true时采用壹贰叁肆伍陆柒捌玖拾佰仟,缺省为false
+    
+返回值：
+    字符型
+    
+示例：
+    例1：chn(1234567,true)        返回："一百二十三万四千五百六十七"
+    
+    例2：chn(1234567)        返回："一二三四五六七"
+    
+    例3：chn(1234567,true,true)    返回："壹佰贰拾叁万肆仟伍佰陆拾柒"
+    
+    例4：chn(1234567,,false)    返回："一二三四五六七"
+	</func>
+	<func name="fill" clz="com.funcs.texts.Fill">
+函数说明：
+    获得n个s拼成的字符串
+    相关函数：space()    产生一个空串
+    
+语法：
+    fill(s, n)
+    
+参数说明：
+    s        用于拼成新串的源串
+    n        新串中包含源串的个数
+    
+返回值：
+    字符型
+    
+示例：
+    例1：fill("1 ",10)    返回："1 1 1 1 1 1 1 1 1 1 "
+    
+    例2：fill("a b",10)    返回："a ba ba ba ba ba ba ba ba ba b"
+	</func>
+	<func name="hexstring" clz="com.funcs.texts.Hexstring">
+函数说明：
+    将数据或者byte数组转换为十六进制字符（数据当做无符号数据处理）
+    
+语法：
+    hexstring(dataExp{,spaceExp})
+    
+参数说明：
+    dataExp        数据或者byte数组表达式
+    spaceExp    布尔型，数据之间是否用空格隔开，true表示要，false表示不要
+    
+返回值：
+    字符型，十六进制字符
+    
+示例：
+    例1：hexstring(12345678,true)    返回："BC 61 4E"
+    例2：hexstring(12345678,false)    返回："BC614E"
+    例3：hexstring(12345678)    返回："BC614E"
+	</func>
+	<func name="left" clz="com.funcs.texts.Left">
+函数说明：
+    获得源字符串左边的子串
+    相关函数：mid()            获得源字符串中间的子串
+          right()        获得源字符串右边的子串
+
+语法：
+    left(string, n)
+    
+参数说明：
+    string        获得子串的源串
+    n        获得子串的长度
+    
+返回值：
+    字符型
+    
+示例：
+    例1：left("abcdefg",3)        返回："abc"
+	</func>
+	<func name="ltrim" clz="com.funcs.texts.Ltrim">
+函数说明：
+    去掉字符串左边的空格
+    相关函数：rrim()        去掉字符串右边的空格
+          trim()        去掉字符串左右的空串
+    
+语法：
+    ltrim(s)
+    
+参数说明：
+    s        准备去掉左边空格的源串
+    
+返回值：
+    字符串型
+    
+示例：
+    例1：ltrim("  abc  def  ")    返回："abc  def  "
+    
+    例2：ltrim("def abc  ")        返回："def abc  "
+	</func>
+	<func name="len" clz="com.funcs.texts.Len">
+函数说明：
+    计算字符串的长度
+    
+语法：
+    len(s)
+    
+参数说明：
+    s        待计算长度的字符串
+    
+返回值：
+    整数
+    
+示例：
+    例1：len("adfg")    返回：4
+    
+    例2：len("  abd  ")    返回：7
+	</func>
+	<func name="like" clz="com.funcs.texts.Like">
+函数说明：
+    判断字符串是否匹配格式串(*匹配0个或多个字符，?匹配单个字符)
+    
+语法：
+    like( stringExp, formatExp{, ignoreCase} )
+    
+参数说明：
+    stringExp            字符串的表达式
+    formatExp            格式串的表达式
+    ignoreCase            布尔值的表达式，缺省为false，表示匹配时大小写敏感，否则忽略大小写
+
+返回值：
+    布尔型
+    
+示例：
+    例1：like( "abc123", "abc*" )        返回：true
+    
+    例2：like( "abc123", "abc1?3" )        返回：true
+    
+    例3：like( "abc123", "abc*34" )        返回：false
+    
+    例4：like( "abc123", "ABC*" )        返回：false
+    
+    例5：like( "abc123", "ABC*", true )    返回：true
+	</func>
+	<func name="lower" clz="com.funcs.texts.Lower">
+函数说明：
+    将字符串转成小写
+    相关函数：upper()        把字符串转成大写
+          word_cap()        将字符串每一个单词的首字母大写
+    
+语法：
+    lower(s)
+    
+参数说明：
+    s        待转成小写的字符串
+    
+返回值：
+    字符型
+    
+示例：
+    例1：lower("ABCdef")    返回："abcdef"
+    
+    例2：lower("defABC")    返回："defabc"
+	</func>
+	<func name="mid" clz="com.funcs.texts.Mid">
+函数说明：
+    返回字符串的子串
+    相关函数：left()        获得源字符串左边的子串
+          right()        获得源字符串右边的子串
+    
+语法：
+    mid(s, start{, end})
+    
+参数说明：
+    s        待获得子串的源串
+    start        获得子串的起始位置
+    end        获得子串的结束位置，缺省为源串的长度
+    
+返回值：
+    字符串型
+    
+示例：
+    例1：mid("abcde",0)    返回：abcde
+    
+    例2：mid("abcde",1,2)    返回：b
+    
+    例3：mid("abcde",3)    返回：de
+	</func>
+	<func name="pos" clz="com.funcs.texts.FindFunc">
+函数说明：
+    查找母串中子串的位置
+    
+语法：
+    pos(s1, s2{, begin})
+    
+参数说明：
+    s1        待查找子串的母串
+    s2        被查找的子串
+    begin        查找的起始位置，缺省为0
+    
+返回值:
+    整数
+
+示例:
+    例1：pos("abcdef","def")    返回：3
+    
+    例2：pos("abcdefdef","def",5)    返回：6
+	</func>
+	<func name="right" clz="com.funcs.texts.Right">
+函数说明：
+    获得字符串右边的子串
+    相关函数：left()        获得源字符串左边的子串
+          mid()            获得源字符串中间的子串
+
+语法：
+    right(s, n)
+    
+参数说明：
+    s        待获得子串的源串
+    n        获得子串的长度
+
+返回值：
+    字符串型
+    
+示例：
+    例1：right("abced",2)  返回："ed"
+	</func>
+	<func name="rtrim" clz="com.funcs.texts.Rtrim">
+函数说明：
+    去掉字符串右边的空格
+    相关函数：ltrim() 去掉字符串左边的空格
+                        trim()            去掉字符串左右的空串
+    
+语法：
+    rtrim(s)
+    
+参数说明：
+    s        准备去掉右边空格的源串
+    
+返回值：
+    字符串型
+    
+示例：
+    例1：rtrim("  abc  def  ")    返回："  abc  def"
+    
+    例2：rtrim("def abc  ")        返回："def abc"
+	</func>
+	<func name="rmb" clz="com.funcs.texts.Rmb">
+函数说明：
+    将浮点数（只支持小数点后两位）转换人民币大写格式
+    
+语法：
+    rmb( numberExp )
+    
+参数说明：
+    numberExp        数据值表达式
+    
+返回值：
+    字符型
+    
+示例：
+    例1：rmb(123456.89)    返回："壹拾贰万叁仟肆佰伍拾陆圆捌角玖分"
+	</func>
+	<func name="rplc" clz="com.funcs.texts.Rplc">
+函数说明：
+    将字符串src的子字符串a变为字符串b，
+    
+语法：
+    rplc( srcExp,subStrA,rplcStrB{,boolExp})
+    
+参数说明：
+    srcExp            源字符串
+    subStrA            源字符串的子字符串
+    rplcStrB        将要替换成的字符串
+    boolExp            引号里的字符是否需要变换，缺省为true
+    
+返回值：
+    替换后的字符串
+    
+示例：
+    例1：rplc("abc'abc'def","a","中国")        返回："中国bc'中国bc'def"
+    
+    例2：rplc("abc'abc'def","a","中国",false)    返回："中国bc'abc'def"
+    
+    例3：rplc("abc'abc'def","a","中国",true)    返回："中国bc'中国bc'def"
+	</func>
+	<func name="space" clz="com.funcs.texts.Space">
+函数说明：
+    产生一个空串
+    相关函数：fill()    获得n个s拼成的字符串
+    
+语法：
+    space(n)
+    
+参数说明：
+    n        生成空串的长度
+    
+返回值：
+    字符串型，获得n个空格拼成的字符串
+    
+示例：
+    例1：space(5)    返回："     "
+	</func>
+	<func name="split" clz="com.funcs.texts.Split">
+函数说明：
+    将字符串按分割符分割成多个子串
+    
+语法：
+    split( srcExp,sepExp{,boolExp})
+    
+参数说明：
+    srcExp        待分割的字符串表达式
+    sepExp        分隔符表达式
+    boolExp        bool型，是否解析引号、括号里的分隔符，
+                为true时解析，为false时不解析，缺省为false
+    
+返回值：
+    分割后的字符串列表
+    
+示例：
+    例1：=split("ab;cd;ef;tg;tt",";")        返回数组：["ab","cd","ef","tg","tt"]
+    
+    例2：=split("ab;c'd;e'f;tg;tt",";",false)    返回数组：["ab","c'd;e'f","tg","tt"]　不解析引号里的分隔符
+    
+    例3：=split("ab;c[d;e]f;tg;tt",";",false)    返回数组：["ab","c[d;e]f","tg","tt"]　不解析括号里的分隔符
+    
+    例4：=split("ab;c'd;e'f;tg;tt",";",true)    返回数组：["ab","c'd","e'f","tg","tt"]　解析引号里的分隔符
+    
+    例5：=split("ab;c[d;e]f;tg;tt",";",true)    返回数组：["ab","c[d","e]f","tg","tt"]　解析括号里的分隔符
+	</func>
+	<func name="trim" clz="com.funcs.texts.Trim">
+函数说明：
+    去掉字符串左右的空串
+    相关函数：right_trim()        去掉字符串右边的空格
+          left_trim()        去掉字符串左边的空格
+    
+语法：
+    trim(s)
+    
+参数说明：
+    s        待去掉左右空串的源串
+    
+返回值：
+    字符串型
+    
+示例：
+    例1：trim("  abc  ")    返回:"abc"
+    
+    例2：trim("  a  bc  ")    返回:"a  bc"
+	</func>
+	<func name="upper" clz="com.funcs.texts.Upper">
+函数说明：
+    把字符串转成大写
+    相关函数：lower()        把字符串转成小写
+          word_cap()        将字符串每一个单词的首字母大写
+语法：
+    upper(s)
+    
+参数说明：
+    s        待转成大写的源串
+    
+返回值：
+    字符串型
+    
+示例：
+    例1：upper("ABCdef")    返回:"ABCDEF"
+    
+    例2：upper("abcDEF")    返回:"ABCDEF"
+	</func>
+	<func name="wordCap" clz="com.funcs.texts.WordCap">
+函数说明：
+    将字符串每一个单词的首字母大写
+    相关函数：upper()                把字符串转成大写
+          lower()                把字符串转成小写
+                        
+语法：
+    wordCap(s)
+    
+参数说明：
+    s        需要将单词首字母大写的源串
+    
+返回值：
+    字符串型
+    
+示例：
+    例1：wordCap("I love my country")    返回："I Love My Country"
+    
+    例2：wordCap("she is beautiful")    返回："She Is Beautiful"
+	</func>
+	<func name="rmQuote" clz="com.funcs.texts.RmQuote">
+函数说明：
+    删除表达式里的引号，包括单引号和双引号
+    
+语法：
+    rmQuote(exp)
+    
+参数说明：
+    exp            表达式
+    
+返回值：
+    字符串
+	</func>
+	<func name="link" clz="com.funcs.texts.Link">
+函数说明：
+      生成一个url
+
+语法：
+      link(serviceName{,jspArgNames,jspArgValues})
+      
+参数说明：
+      serviceName 服务名称
+	jspArgNames jsp参数名称数组，可为空，元素类型需为字符串型
+	jspArgValues jsp参数值数组，需与jspArgNames元素个数相同
+      
+返回值：
+      字符串型
+      
+示例：
+
+      例1：link("ServiceName",list("jspArg1"), list("value1"))
+	返回ServiceName?jasArg1=value1
+	</func>
+	</group>
+	<group type="type">
+	<func name="bigint" clz="com.funcs.type.Bigint">
+函数说明：
+    将字符型整数转换成大整数或对数值型数据取整返回大整数
+    该数据类型精度高，支持大于64位的整数，但是运算速度慢
+    如果小于64位的整数，建议用long(支持64位，即最大为2的64次方)或者int(支持32位，即最大为2的32次方)
+    
+语法：
+    bigint(stringExp)
+    bigint(numberExp)
+    
+参数说明：
+    stringExp        需要转换的整数串
+    numberExp        需要取整的数值型数据，超过64位要用decimal类型，缺省为double(64位)
+    
+返回值：
+    大整数BigInteger
+    
+示例：
+    例1：bigint("123456789012345678901234567890")        返回：123456789012345678901234567890
+    
+    例2：bigint(decimal("1234567890123456789012345.67890"))    返回：1234567890123456789012345
+    
+    例3：bigint(12345.6789012345678901234567890)        返回：12345
+	</func>
+	<func name="str2date" clz="com.funcs.type.DateFunc">
+函数说明：
+    将字符串转换成日期型数据
+    
+语法：
+    date(stringExp)
+    
+参数说明：
+    stringExp        字符串表达式，其结果必须返回合法日期格式的字符串
+                    要求格式为yyyy-MM-dd，不含时间，如果含了时间，时间部分不转换
+                                
+返回值：
+    日期时间型，但是时间部分都为00:00:00
+    
+示例：
+    例1：date("1982-08-09")            返回日期：1982-08-09 00:00:00
+    
+    例2：date("1982-08-09 10:20:30")    返回日期：1982-08-09 00:00:00
+	</func>
+	<func name="str2deicmal" clz="com.funcs.type.Str2deicmal">
+函数说明：
+    将字符串或数字型数值转换成大浮点数
+    
+语法：
+    deicmal(stringExp)
+    decimal(numberExp)
+    
+参数说明：
+    stringExp        给定数字串,可含小数点
+    numberExp        数值，只能少于等于64位，超过64位就要用字符串
+    
+返回值：
+    大浮点数BigDecimal
+    
+示例：
+    例1：decimal("123456789012345678901234567890")    返回：123456789012345678901234567890
+    
+    例2：decimal(1234567890123456)            返回：1234567890123456（BigDecimal类型）
+	</func>
+	<func name="double" clz="com.funcs.type.Double">
+函数说明：
+    将字符串或数字转换成64位的双精度浮点数
+    
+语法：
+    double( string )
+    double( number )
+    
+参数说明：
+    string        需要转换的字符串表达式
+    number        数字
+    
+返回值：
+    64位的双精度浮点数
+    
+示例：
+    例1：double("1234567")    返回：1234567.0
+    
+    例2：double(1234567)    返回：1234567.0
+	</func>
+	<func name="float" clz="com.funcs.type.Float">
+函数说明：
+    将单精度浮点数、双精度浮点数、字符串转换为32位的单精度浮点型
+    
+语法：
+    float(string)
+    float(number)
+    
+参数说明：
+    string        需要转换的单精度浮点数、双精度浮点数表达式
+    number        数字
+    
+返回值：
+    32位的单精度浮点数
+    
+示例：
+    例1：float("1234567")    返回：1234567.0
+    
+    例2：float(1234567.0)    返回：1234567.0
+    
+    例3：float(1234567)    表达式提示错误，因为1234567不是浮点数
+	</func>
+	<func name="int" clz="com.funcs.type.Int">
+函数说明：
+    将字符串或数字转换成整数
+    
+语法：
+    int( string )
+    int( number )
+    
+参数说明：
+    string        需要转换的字符串表达式
+    number        数字，如果带有小数位，转换后小数位被截掉
+    
+返回值：
+    32位整数
+    
+示例:
+    例1：int( "100" )    返回：100
+    
+    例2：int( 100.1 )    返回：100
+    
+    例3：int(100.9999)    返回：100
+	</func>
+	<func name="long" clz="com.funcs.type.Long">
+函数说明：
+    将字符串或数字转换成64位长整数
+    
+语法：
+    long( string )
+    long( number )
+    
+参数说明：
+    string        需要转换的字符串表达式
+    number        数字,如果带有小数，则小数部分被截掉
+    
+返回值：
+    64位长整数
+    
+示例：
+    例1：long("1234567")    返回：1234567
+    
+    例2：long(1234567.789)    返回：1234567
+	</func>
+	<func name="number" clz="com.funcs.type.Number">
+函数说明：
+    将字符串转换成相应的32位整数、64位整数、或者64位符点数
+    
+语法：
+    number( string )
+    
+参数说明：
+    string        需要转换的字符串表达式
+    
+返回值：
+    32位整数、64位整数、或者64位符点数
+    
+示例：
+    例1：number("123")        返回：123
+    
+    例2：number("1234567890")    返回：1234567890
+    
+    例3：number("12345.7891")    返回：12345.7891
+	</func>
+	<func name="str" clz="com.funcs.type.Str">
+函数说明：
+    将对象转换成字符型，转换过程中可以进行格式化
+    
+语法：
+    str(expression{, format})
+    
+参数说明：
+    expression        需要转换成字符串的常数对象或表达式
+    format            转换过程中进行格式化的格式串
+    
+返回值：
+    字符型
+    
+示例：
+    例1：str(123)        返回值："123"
+    
+    例2：str(arg1,"yyyy年MM月dd日")，其中arg1为日期型参数，值为1972-09-09，
+                返回值："1972年09月09日"
+    
+    例3：str(3456.9876,"￥#,##0.00")    返回值："￥3,456.99"
+	</func>
+	<func name="dateTime" clz="com.funcs.type.DateTime">
+函数说明：
+    将字符串或长整数转换成日期时间
+    
+语法：
+    dateTime(string)
+    dateTime(long)
+    
+参数说明：
+    string        格式为yyyy-MM-dd HH:mm:ss的字符串
+    long        以微秒计的长整数
+    
+返回值：
+    日期时间
+
+示例：
+    例1：dateTime("2006-01-01 10:20:30")        返回：2006-01-01 10:20:30
+        
+    例2：dateTime("2006-01-01 10:20:30:111")    返回：2006-01-01 10:20:30
+    
+    例3：dateTime(12345)                返回：1970-01-01 08:00:12
+	</func>
+	<func name="datetime2" clz="com.funcs.type.Datetime2">
+函数说明：
+    将各种格式的日期字符串转换成日期时间型数据，转换时可以指定字符串的当前格式
+    
+语法：
+    datetime2(string, format)
+    
+参数说明：
+    string        各种格式的日期字符串
+    format        用于说明参数1的格式串
+    
+返回值：
+    日期时间型数据
+    
+示例：
+    例1：datetime2("12/28/1972","MM/dd/yyyy")            返回：1972-12-28 00:00:00
+    
+    例2：datetime2("12/28/1972 10:23:43","MM/dd/yyyy hh:mm:ss")    返回：1972-12-28 10:23:43
+    
+    例3：datetime2("19800227","yyyyMMdd")                返回：1980-02-27 00:00:00
+    
+    例4：datetime2("1982年12月30日","yyyy年MM月dd日")        返回：1982-12-30 00:00:00
+	</func>
+	<func name="isdate" clz="com.funcs.type.Isdate">
+函数说明：
+    判定字符串是否具有转换成日期的合法格式
+    
+语法：
+    isdate( string )
+    
+参数说明：
+    string            字符串表达式
+    
+返回值：
+    布尔型
+    
+示例：
+    例1：isdate("2006-10-10")        返回：true
+    
+    例2：isdate("2006-10-10 10:20:30")    返回：true
+    
+    例3：isdate("20061010")            返回：false
+    
+    例4：isdate("10:20:30")            返回：false
+	</func>
+	<func name="isnumber" clz="com.funcs.type.Isnumber">
+函数说明：
+    判定字符串是否具有转换成数值的合法格式
+    
+语法：
+    isnumber( string )
+    
+参数说明：
+    string            字符串表达式
+    
+返回值：
+    布尔型
+    
+示例：
+    例1：isnumber("abc")    返回：false
+    
+    例2：isnumber("1234")    返回：true
+	</func>
+	<func name="istime" clz="com.funcs.type.Istime">
+函数说明：
+    判定字符串是否具有转换成时间的合法格式
+    
+语法：
+    istime( string )
+    
+参数说明：
+    string            字符串表达式
+    
+返回值：
+    布尔型
+
+示例：
+    例1：istime("2006-10-10")        返回：false
+    
+    例2：istime("2006-10-10 10:20:30")    返回：false
+    
+    例3：istime("20061010")            返回：false
+    
+    例4：istime("10:20:30")            返回：true
+	</func>
+	<func name="isEmpty" clz="com.funcs.type.IsEmpty">
+函数说明：
+    判定表达式运算的结果列表中的元素个数是否为0,或者运算的结果是否为null
+    
+语法：
+    isEmpty(exp)
+    
+参数说明：
+    exp            表达式
+    
+返回值：
+    布尔型
+	</func>
+	</group>
+</funcs>

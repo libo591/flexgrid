@@ -1,0 +1,57 @@
+{
+	"global":
+			{
+				"chromeColor":"0xDEEBFF",
+				"color": "0x444444",
+				"contentBackgroundColor": "0xFFFFFF",
+				"symbolColor": "0x333333",
+				"rollOverColor": "0xEBF4FF",
+				"selectionColor": "0xDEEBFF",
+				"focusColor": "0xEEEEEE",
+				"accentColor": "0xC0E3FF"
+			},
+	"Application":
+			{
+				"backgroundColor": "0xEBF4FF",
+				"fontFamily":"Arial,_sans"
+			},
+	"grid_corner":
+			{
+				"backgroundColor":"0xA9C4E9,0xD7E4F4,0x8CA1B6,0xD4E1F4"
+			},
+	"grid_colheader":
+			{
+				"color":"0x000000",
+				"backgroundColor":"0xF8F9FB,0xD7DFEB,0xF8F9FB,0xD7DFEB",/** 普通状态渐进色1，普通状态渐进色2，over状态渐进色1，Over状态渐进色2，*/
+				"selectionColor":"0xFCF6E8,0xF3C66E,0xFCEFE3,0xF29536",/** 选中状态渐进色1，选中状态渐进色2，选中over状态渐进色1，选中Over状态渐进色2，*/
+				"borderColor":"0x9EB6CE,0xF29536"/** 普通状态边框色,选中状态边框色*/
+			},
+	"grid_rowheader":
+			{
+				"color":"0x000000",
+				"backgroundColor":"0xE4ECF7,0xBBC4D1",
+				"selectionColor":"0xFFD58D,0xF1C05C",
+				"borderColor":"0x9EB6CE,0xF29536"
+			},
+	"grid_cell":
+			{
+				"color":"0x000000",
+				"backgroundColor":"0xFFFFFF",
+				"selectionColor":"0xAFD7FF,0xAFD7FF",
+				"borderColor":"0xD3D3D3",
+				"indentation":"0",
+				"fontSize":"12",
+				"fontFamily":"Arial",
+				"fontWeight":"normal",
+				"fontStyle":"normal",/** italic */
+				"textAlign":"center",
+				"verticalAlign":"middle",
+				"textDecoration":"none"/** underline */
+			},
+	"grid_firstselected":
+			{
+				"borderColor":"0x000000",
+				"borderStyle":"solid",
+				"borderWeight":"3"
+			}
+}

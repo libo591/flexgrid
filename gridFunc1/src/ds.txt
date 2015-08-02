@@ -1,0 +1,234 @@
+<group type="ds">
+	<func name="select" clz="com.funcs.ds::Select">
+函数说明：
+    从数据集的当前行集中选取符合条件的记录
+语法：
+    select(dsname,select_exp{, sort_exp{, filter_exp{, sort_field}}} )
+
+参数说明：
+	dsname      	  数据集名称
+    select_exp：    要选择的字段列名/列号，，也可以是表达式。
+                列号用#n表示，例如#0代表第0列，#1代表第1列，依此类推
+    sort_exp:    指定数据排序的顺序，true表示降序排列，false表示升序排列。
+    filter_exp:    数据过滤表达式，如果全部选出，则此参数省略，仅用“,”占位。
+    sort_field:    数据排序表达式。如果此项为空，则按照select_exp字段排序，否则按照此项，此项字段可以是多个字段用逗号隔开。
+返回值：
+    一组数据的集合，数据类型由select_exp的运算结果决定
+    
+函数示例：
+    例1：select("ds1",name)
+            从数据源ds1中选取name字段列的所有值，不排序
+
+    例2：select("ds1", #2, true )
+            从数据源ds1中选取第二个字段列的所有值并降序排列
+
+    例3：select("ds1", name,false,sex=='1')
+            从数据源ds1中选取性别为男性('1')的name字段列的值并升序排列
+
+    例4：ds1.select( name, true, sex=='1', id )
+            从数据源ds1中选取性别为男性的name字段列的值并按id字段降序排列
+	</func>
+	<func name="group" clz="com.funcs.ds::Group">
+函数说明：
+    根据分组表达式，从数据集中选出一组组集。
+    
+语法：
+    group(dsname,selectExp{,sortExp{,filterExp{,groupExp}}})
+
+参数说明：
+	dsname      	  数据集名称
+    selectExp        选出的分组表达式，可以是字段列名/列号，也可以是表达式。
+                    列号用#n表示，例如#0代表第0列，#1代表第1列，依此类推
+                                
+    sortExp            分组前记录的排序顺序，true为逆序，false为顺序
+    filterExp        过滤表达式
+    groupExp        分组后对组的排序表达式，一般是汇总运算的表达式，如组合计等
+
+返回值：
+    一组数据的集合，数据类型由selectExp的运算结果来决定
+
+示例：
+    例1：ds1.group(class)
+            把数据集ds1中所有记录按照class字段进行分组，
+            并返回每组的class值组成的集合
+    
+    例2：ds1.group(class, true )
+            把数据集ds1中所有记录按照class字段降序排列，然后根据class进行分组，
+            并返回每组的class值组成的集合
+    
+    例3：ds1.group(class,false,sex=='1')
+            从数据源ds1中选取性别为"1"的记录，按照class字段升序排列，
+            然后根据class进行分组，并返回每组的class值组成的集合
+    
+    例4：ds1.group(省份,true,'',sum(工业产值))
+            对数据集ds1按照省份进行分组，分组后求出每组的sum(工业产值)，
+            然后按照这个汇总值对组进行逆序排列
+	</func>
+	<func name="fieldNameList" clz="com.funcs.ds::FieldList">
+函数说明：
+    得到数据集列名的集合
+    
+语法：
+    fieldNameList(dsname{,filterExp})
+
+参数说明：
+    dsname      	  数据集名称
+    filterExp        过滤表达式
+
+返回值：
+    列名字符串的集合
+
+示例：
+    例1：fieldNameList("ds1")
+    	求得ds1列名的集合
+    
+    例2：group("ds1","backcol1,backcol2")
+		求得ds1列名的集合，不包括backcol1,backcol2
+	</func>
+	<func name="fieldIndex" clz="com.funcs.ds::FieldIndex">
+函数说明：
+    得到列名在数据集中的列的索引，从0开始
+    
+语法：
+    fieldIndex(dsname,fieldName)
+
+参数说明：
+    dsname      	  数据集名称
+    fieldName        列名
+
+返回值：
+   列的索引
+
+示例：
+    例1：
+    列名集合： A,B,C,D,E
+    fieldIndex("ds1",A)	返回0
+	</func>
+	<func name="fieldName" clz="com.funcs.ds::FieldName">
+函数说明：
+    得到列名
+    
+语法：
+    fieldName(dsname,fieldIndex)
+
+参数说明：
+    dsname      	  数据集名称
+    fieldIndex        列索引
+
+返回值：
+   列名
+
+示例：
+    例1：
+    列名集合： A,B,C,D,E
+    fieldName("ds1",1)	返回B
+	</func>
+	<func name="rowcount" clz="com.funcs.ds::Rowcount">
+函数说明：
+    	得到数据集记录数
+    
+语法：
+    rowcount(dsname{,filterExp})
+
+参数说明：
+    dsname      	  数据集名称
+    filterExp        过滤条件
+
+返回值：
+	数据集记录数
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    rowcount("ds1")	返回2
+    rowcount("ds1","C=='1'")	返回1
+	</func>
+	<func name="colcount" clz="com.funcs.ds::Colcount">
+函数说明：
+    	得到数据集列数
+    
+语法：
+    colcount(dsname)
+
+参数说明：
+    dsname      	  数据集名称
+
+返回值：
+	得到数据集列数
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    colcount("ds1")	返回5
+	</func>
+	<func name="dsrow" clz="com.funcs.ds::Dsrow">
+函数说明：
+    	得到数据集某一行数值集合
+    
+语法：
+    dsrow(dsname,rowindex)
+
+参数说明：
+    dsname      	 数据集名称
+	rowindex		行索引
+返回值：
+	得到数据集某一行数值集合
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    dsrow("ds1",0)	返回[1,1,1,1,1]		
+	</func>
+	<func name="dscol" clz="com.funcs.ds::Dscol">
+函数说明：
+    	得到数据集某一列数值集合
+    
+语法：
+    dscol(dsname,colindex)
+
+参数说明：
+    dsname      	 数据集名称
+	colindex		列索引
+返回值：
+	得到数据集某一列数值集合
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    dscol("ds1",0)	返回[1,2]		
+	</func>
+	<func name="dscell" clz="com.funcs.ds::Dscell">
+函数说明：
+    	得到数据集某一单元数值
+    
+语法：
+    dscell(dsname,rowindex,colindex)
+
+参数说明：
+    dsname      	 数据集名称
+    rowindex		行索引
+	colindex		列索引
+返回值：
+	得到数据集某一单元数值
+
+示例：
+    例1：
+   	数据集： 
+   	A,B,C,D,E
+   	1,1,1,1,1
+   	2,2,2,2,2
+    dscell("ds1",0,1)	返回1		
+	</func>
+	</group>

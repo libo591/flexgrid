@@ -1,0 +1,12 @@
+<View sceneWidth="1000" sceneHeight="500" sceneColor="0xffffff" sceneBg="" layers="1,1,0,0,第 1 层">
+  <Button label="异步1" skin="png.comp.button" x="7" y="4" layer="1"/>
+  <Button label="异步2" skin="png.comp.button" x="103" y="4" layer="1" var="btn2"/>
+  <Button label="新建数据集" skin="png.comp.button" x="199" y="4" layer="1" var="btn3"/>
+  <Button label="FX" skin="png.comp.button" x="444" y="4" layer="1" var="btn4"/>
+  <TextInput skin="png.comp.textinput" x="295" y="4" layer="1" var="funcName"/>
+  <Label text="切换样式:" x="9" y="33" layer="1" width="87" height="25" align="center"/>
+  <ComboBox labels="label1,label2" skin="png.comp.combobox" x="122" y="33" layer="1" width="135" height="23"/>
+  <Label text="下面是表格：" x="9" y="71" layer="1"/>
+  <Box layers="1,1,0" layer="1" x="9" y="94" width="982" height="395" var="box"/>
+  <Button label="调试" skin="png.comp.button" x="540" y="5" layer="1"/>
+</View>
